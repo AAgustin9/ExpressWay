@@ -1,0 +1,16 @@
+{
+  "name": "expressway",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon App.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mongoose": "^5.7.7",
+    "nodemon": "^2.0.1"
+  }
+}
