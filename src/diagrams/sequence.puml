@@ -1,0 +1,20 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+participant "Car" as C
+participant ldr
+participant "Toll(num)" as T
+
+C -> ldr: Approaches
+group if isTollGreen
+    group ldrReceivesLight
+        ldr -> T: open gate
+        end
+    else
+        ldr -> T: close gate
+    end
+
+
+@enduml
