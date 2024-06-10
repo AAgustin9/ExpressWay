@@ -23,7 +23,7 @@ client.on("message", (topic, message) => {
     // message is Buffer
     console.log(message.toString());
     if (topic === "gate/group1/status") {
-        print("gruoup1")
+        console.log("gruoup1")
         database.collection(config.mongodb.collection).findOneAndUpdate({
             gate: 1
         },{
@@ -32,7 +32,7 @@ client.on("message", (topic, message) => {
             date: date_time
         });
     } else if (topic === "gate/group2/status") {
-        print("gruoup2")
+        console.log("gruoup2")
         database.collection(config.mongodb.collection).findOneAndUpdate({
             gate: 2
         },{
@@ -41,7 +41,7 @@ client.on("message", (topic, message) => {
             date: date_time
         });
     } else if (topic === "gate/group3/status") {
-        print("gruoup3")
+        console.log("gruoup3")
         database.collection(config.mongodb.collection).findOneAndUpdate({
             gate: 3
         },{
