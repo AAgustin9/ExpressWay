@@ -19,35 +19,38 @@ client.on("connect", () => {
     });
 });
 
-client.on("message", (topic, message) => {
+client.on("message", async (topic, message) => {
     // message is Buffer
     console.log(message.toString());
     if (topic === "gate/group1/status") {
         console.log("gruoup1")
-        database.collection(config.mongodb.collection).findOneAndUpdate({
+        await database.collection(config.mongodb.collection).findOneAndUpdate({
             gate: 1
-        },{
-            gate: 1,
-            status: message.toString(),
-            date: date_time
+        }, {
+            $set: {
+                status: message.toString(),
+                date: date_time
+            }
         });
     } else if (topic === "gate/group2/status") {
         console.log("gruoup2")
-        database.collection(config.mongodb.collection).findOneAndUpdate({
+        await database.collection(config.mongodb.collection).findOneAndUpdate({
             gate: 2
-        },{
-            gate: 2,
-            status: message.toString(),
-            date: date_time
+        }, {
+            $set: {
+                status: message.toString(),
+                date: date_time
+            }
         });
     } else if (topic === "gate/group3/status") {
         console.log("gruoup3")
-        database.collection(config.mongodb.collection).findOneAndUpdate({
+        await database.collection(config.mongodb.collection).findOneAndUpdate({
             gate: 3
-        },{
-            gate: 3,
-            status: message.toString(),
-            date: date_time
+        }, {
+            $set: {
+                status: message.toString(),
+                date: date_time
+            }
         });
     }
 });
