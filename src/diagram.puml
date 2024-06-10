@@ -1,0 +1,24 @@
+@startuml expressWay
+
+class mqtt
+class app {
+    + graph
+    + disable buttons
+}
+
+class db {
+    + data
+}
+
+class esp32 {
+    + subs
+    + pubs
+    + handleGates
+}
+
+
+mqtt -- db
+esp32 -- mqtt
+mqtt -- app
+
+@enduml
