@@ -3,8 +3,8 @@ var config   = require('./config');
 const mqtt = require("mqtt");
 var mongoUri = 'mongodb://' + config.mongodb.hostname + ':' + config.mongodb.port + '/' + config.mongodb.database;
 var date_time = new Date();
-const client = new MongoClient(mongoUri);
-const database = client.db(config.mongodb.database);
+const clientDB = new MongoClient(mongoUri);
+const database = clientDB.db(config.mongodb.database);
 
 // --------------MQTT PART----------------
 

@@ -10,7 +10,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "mongodb": "^6.7.0",
     "mongoose": "^5.7.7",
+    "mqtt": "^5.7.0",
     "nodemon": "^2.0.1"
   }
 }
